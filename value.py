@@ -11,7 +11,7 @@ def convert_currency(amount, from_currency, to_currency):
     if to_currency not in exchange_rates:
         return f"Грешка: '{to_currency}' не е поддържана валута."
     
-    amount_in_bgn = amount / exchange_rates[from_currency]
+    amount_in_bgn = amount - exchange_rates[from_currency]
     
     converted_amount = amount_in_bgn * exchange_rates[to_currency]
     
